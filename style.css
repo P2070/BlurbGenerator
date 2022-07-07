@@ -1,0 +1,117 @@
+@font-face {
+	font-family: DM Sans;
+	src:	url('type/DMSans-Regular.ttf');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-size-adjust: 100%;
+	text-rendering: optimizeLegibility;
+}
+
+*:focus {
+	outline: 0;
+}
+
+:root {
+	--words: normal normal 300 2em/2em DM Sans, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		--background: rgba(12, 12, 12, 1);
+		--color: rgba(200, 200, 200, 1);
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: rgba(255, 255, 255, 1);
+		--color: rgba(12, 12, 12, 1);
+		
+		video {
+			opacity: 0;
+		}
+	}
+}
+
+body {
+	background: var(--background);
+	height: 100vh;
+	color: var(--color);
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	margin: 0;
+}
+
+header > * {
+	display: inline;
+	font: var(--words);
+	margin: 0 7px 0 0;
+	padding: 0;
+	overflow-wrap: break-word;
+	opacity: 0;
+}
+
+header {
+	max-width: 800px;
+	padding: 48px;
+	z-index: 100;
+}
+
+h1 {
+	animation: .5s linear 0s 1 forwards rotate;
+}
+
+h2 {
+	animation: .5s linear .2s 1 forwards rotate;
+}
+
+h3 {
+	animation: .5s linear .4s 1 forwards rotate;
+}
+
+h4 {
+	animation: .5s linear .6s 1 forwards rotate;
+}
+
+h5 {
+	animation: .5s linear .8s 1 forwards rotate;
+}
+
+h6 {
+	animation: .5s linear 1s 1 forwards rotate;
+}
+
+video {
+	position: absolute;
+	z-index: -100;
+	width: 100vw;
+	height: 100vh;
+	object-fit: cover;
+	opacity: .1;
+}
+
+@keyframes rotate {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+
+
+@media only screen and (max-width: 600px) {
+	html { font-size: 60%; }
+}
